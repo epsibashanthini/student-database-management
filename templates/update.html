@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UFT-8">
+    <title>Index</title>
+    
+</head>
+<body>
+    <form method="POST" action="/update">
+        <h2>Update Form</h2>
+            <table>
+                <tr>
+                    <td><label>Name</label></td>
+                    <td><input type="text" name="name" value="{{data['name']}}"></td>
+                </tr>
+                <tr>
+                    <td><label>Date of Birth</label></td>
+                    <td><input type="text" name="dob" value="{{data['dob']}}"></td>
+                </tr>
+                <tr>
+                    <td><label>Sex</label></td>
+                    <td><input type="text" name="sex" value="{{data['sex']}}"></td>
+                </tr>
+                <tr>
+                    <td><label>Sex</label></td>
+                    <td><input type="text" name="sex" value="{{data['sex']}}"></td>
+                </tr>
+                <tr>
+                    <td><label>Department</label></td>
+                    <td><input type="text" name="department" value="{{data['department']}}"></td>
+                </tr>
+                <tr>
+                    <td><lable>Address</lable></td>
+                    <td><textarea name="address">{{data['address']}}</textarea></td>
+                </tr>
+                <tr>
+                    <td><label>Contact</label></td>
+                    <td><input type="text" name="contact" value="{{data['contact']}}"></td>
+                </tr>
+                <tr>
+                    <td><label>Mail</label></td>
+                    <td><input type="text" name="mail" value="{{data['mail']}}"></td>
+                </tr>
+                <tr>
+                    <td><input type="Submit" value="update"></td>
+                </tr>          
+                               
+            </table>
+    </form>
+</body>
+</html>

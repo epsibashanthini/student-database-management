@@ -1,0 +1,63 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>add</title>
+    </head>
+    <body bgcolor="#E8D2A6"><br>
+        <form method="POST" action="/addata">
+        <center><h1>Add Student Details</h1></center> 
+        <table border="4" width="500" height="200" align="center">
+            <tr>
+                <td><label>Register Number:</label></td>
+                <td><input type="text" name="reg_no" required></td>
+            </tr><br>
+            <tr>
+                <td><label>Name:</label></td>
+                <td><input type="text" name="name" required></td>
+            </tr><br>
+            <tr>
+                <td><label>Date of Birth:</label></td>
+                <td><input type="date" name="dob" required></td>
+            </tr><br>
+            <tr>
+                <td><label>Sex:</label></td>
+                <td>
+                    <input type="radio" name="sex" value="Female" required><label for="sex">Female</label>
+                    <input type="radio" name="sex" value="Male" required><label for="sex">Male</label>
+                </td>
+            </tr><br>
+            <tr>
+                <td><label for="department">Department:</label></td>
+                <td><select name="department" id="department">
+                        <option value="IT">IT</option>
+                        <option value="CS">CS</option>
+                        <option value="MCA">MCA</option>
+                        <option value="SS">SS</option>
+                        <option value="DA">DA</option>
+                        <option value="SE">SE</option>
+                    </select>
+                </td>
+            </tr><br>
+            <tr>
+                <td><label>Address:</label></td>
+                <td><textarea name="address" required></textarea></td>
+            </tr><br>
+            <tr>
+                <td><label>Mobile Number:</label></td>
+                <td><input type="number" name="contact" required></td>
+            </tr><br>
+            <tr>
+                <td><label>Mail Address:</label></td>
+                <td><input type="text" name="mail" required></td>
+            </tr><br>
+            <tr>
+                <td colspan="2" align="center" width="100" height="50">
+                    <input type="submit" value="submit">
+                </td>
+            </tr>
+            
+        </table>
+    
+        </form>
+    </body>
+</html>

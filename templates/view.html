@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html land="en">
+<head>
+    <meta charset="UTF-8">
+    <title>View Record</title>
+</head>
+
+<body>
+       <h2>View Record</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Register No</th>
+                    <th>Name</th>
+                    <th>Data of Birth</th>
+                    <th>Sex</th>
+                    <th>Department</th>
+                    <th>Address</th>
+                    <th>Contact</th>
+                    <th>Mail</th>
+                    <th>Update</th>
+                    <th>Delete</th>
+
+                </tr>
+            </thead>
+            <tboday>
+                {% for result in student_record %}
+                    {% set i=loop.index %}
+                <tr>
+                    <td>{{i}}</td>
+                    <td>{{result["name"]}}</td>
+                    <td>{{result["dob"]}}</td>
+                    <td>{{result["sex"]}}</td>
+                    <td>{{result["department"]}}</td>
+                    <td>{{result["address"]}}</td>
+                    <td>{{result["contact"]}}</td>
+                    <td>{{result["mail"]}}</td>
+                    <td><a href="{{url_for('update',reg_no=result['reg_no'])}}">Update</a></td>
+                    <td><a href="{{url_for('delete',reg_no=result['reg_no'])}}">Delete</a></td>
+                </tr>
+                {% endfor %}
+            </tboday>
+        </table>
+        <div>
+            <a href="{{url_for('home')}}" class="btn btn-warning pull-right">Home Page</a>
+        </div>
+
+    </div>
+
+</body>
+</html>
