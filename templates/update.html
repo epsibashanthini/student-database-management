@@ -2,47 +2,44 @@
 <html lang="en">
 <head>
     <meta charset="UFT-8">
-    <title>Index</title>
+    <title>update</title>
     
 </head>
 <body>
-    <form method="POST" action="/update">
+    <form method="POST" action="">
         <h2>Update Form</h2>
             <table>
                 <tr>
                     <td><label>Name</label></td>
-                    <td><input type="text" name="name" value="{{data['name']}}"></td>
+                    <td><input type="text" name="name" value="{{student_record['name']}}"></td>
                 </tr>
                 <tr>
                     <td><label>Date of Birth</label></td>
-                    <td><input type="text" name="dob" value="{{data['dob']}}"></td>
+                    <td><input type="text" name="dob" value="{{student_record['dob']}}"></td>
                 </tr>
                 <tr>
                     <td><label>Sex</label></td>
-                    <td><input type="text" name="sex" value="{{data['sex']}}"></td>
+                    <td><input type="text" name="sex" value="{{student_record['sex']}}"></td>
                 </tr>
-                <tr>
-                    <td><label>Sex</label></td>
-                    <td><input type="text" name="sex" value="{{data['sex']}}"></td>
-                </tr>
+                
                 <tr>
                     <td><label>Department</label></td>
-                    <td><input type="text" name="department" value="{{data['department']}}"></td>
+                    <td><input type="text" name="department" value="{{student_record['department']}}"></td>
                 </tr>
                 <tr>
                     <td><lable>Address</lable></td>
-                    <td><textarea name="address">{{data['address']}}</textarea></td>
+                    <td><textarea name="address">{{student_record['address']}}</textarea></td>
                 </tr>
                 <tr>
                     <td><label>Contact</label></td>
-                    <td><input type="text" name="contact" value="{{data['contact']}}"></td>
+                    <td><input type="text" name="contact" value="{{student_record['contact']}}"></td>
                 </tr>
                 <tr>
                     <td><label>Mail</label></td>
-                    <td><input type="text" name="mail" value="{{data['mail']}}"></td>
+                    <td><input type="text" name="mail" value="{{student_record['mail']}}"></td>
                 </tr>
                 <tr>
-                    <td><input type="Submit" value="update"></td>
+                    <td><input type="submit" value="update"></td>
                 </tr>          
                                
             </table>

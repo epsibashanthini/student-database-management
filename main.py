@@ -1,4 +1,4 @@
-from flask import Flask,render_template,request,message_flashed,url_for,redirect
+from flask import Flask,render_template,request,url_for,redirect,jsonify
 import sqlite3
 
 app=Flask(__name__)
@@ -44,13 +44,14 @@ def addata():
             cur=con.cursor()
             cur.execute("INSERT INTO student_record(name,dob,sex,department,address,contact,mail)VALUES(?,?,?,?,?,?,?)",(name,dob,sex,department,address,contact,mail))
             con.commit()
-            message_flashed("Record Added successfully")
+            return jsonify("Record Added successfully")
         except:
-            message_flashed("Inserting error")
+            return jsonify("Inserting error")
         finally:
             return redirect(url_for("home"))
             con.close()
 
+# view records 
 @app.route('/view')
 def view():
     con=sqlite3.connect("database.db")
@@ -61,6 +62,8 @@ def view():
     con.close()
     return render_template("view.html",student_record=data)
 
+
+# update the record 
 @app.route("/update/<string:reg_no>",methods=["POST","GET"])
 def update(reg_no):
     con=sqlite3.connect("database.db")
@@ -84,10 +87,10 @@ def update(reg_no):
                 cur=con.cursor()
                 cur.execute("UPDATE student_record SET name=?,dob=?,sex=?,department=?,address=?,contact=?,mail=? WHERE reg_no=?",(name,dob,sex,department,address,contact,mail,reg_no))
                 con.commit()
-                message_flashed("Update Successfully","success")
+                return jsonify("Update Successfully","success")
 
             except:
-                message_flashed("error in update operation","danger")
+                return jsonify("error in update operation","danger")
             
             finally:
                 return redirect(url_for("home"))
@@ -95,6 +98,7 @@ def update(reg_no):
                 
     return render_template('update.html',student_record=data)
 
+# delete record
 @app.route('/delete/<string:reg_no>')
 def delete(reg_no):
     try:
@@ -102,10 +106,10 @@ def delete(reg_no):
         cur=con.cursor()
         cur.execute("DELETE FROM student_record WHERE reg_no=?",(reg_no))
         con.commit()
-        message_flashed("Deleted Successfully","success")
+        return jsonify("Deleted Successfully","success")
 
     except:
-        message_flashed("delete failed","danger")
+        return jsonify("delete failed","danger")
 
     finally:
         return redirect(url_for("home"))
